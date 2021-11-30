@@ -1,5 +1,7 @@
 package ru.skypro;
 
+import javax.swing.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для IOS по ссылке");
         } else if (clientOS == 1 && clientDeviceYear >= 2015) {
             System.out.println("Установите версию приложения для ANDROID по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear < 2015){
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для ANDROID по ссылке");
         } else {
             System.out.println("ВНИМАНИЕ! Неверные данные");
@@ -29,7 +31,7 @@ public class Main {
 
         //TASK 3
         int year = 1200;
-        if (year % 4==0 && year % 100 !=0 || year % 400 == 0){
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным.");
         } else {
             System.out.println(year + " год не является високосным.");
@@ -38,15 +40,15 @@ public class Main {
         //TASK 4
         int deliveryDistanceKm = 100;
 
-            if (deliveryDistanceKm<20){
+        if (deliveryDistanceKm < 20) {
             System.out.println("На доставку потребуется 1 день.");
-            }else if (deliveryDistanceKm>=20&&deliveryDistanceKm<60){
-                System.out.println("На доставку потребуется 2 дня.");
-            }else if (deliveryDistanceKm>=60&&deliveryDistanceKm<100){
-                System.out.println("На доставку потребуется 3 дня.");
-            }else {
-                System.out.println("Доставить не сможем.");
-            }
+        } else if (deliveryDistanceKm >= 20 && deliveryDistanceKm < 60) {
+            System.out.println("На доставку потребуется 2 дня.");
+        } else if (deliveryDistanceKm >= 60 && deliveryDistanceKm < 100) {
+            System.out.println("На доставку потребуется 3 дня.");
+        } else {
+            System.out.println("Доставить не сможем.");
+        }
 
 
         //TASK 5
@@ -77,5 +79,29 @@ public class Main {
                 System.out.println("ТАКОГО МЕСЯЦА НЕ СУЩЕСТВУЕТ");
         }
 
-    }}
+        //START TASK 6
+        int age = 16;
+        int salary = 98_000;
+        double salaryCoefficient50 = 1.2;
+        double salaryCoefficient80 = 1.5;
+        if (age <= 23&&age>18&&salary<50_000){
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 + " рублей");
+        }else if (age <= 23&&age>18&&salary>=50_000&&salary<80_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2*salaryCoefficient50 + " рублей");
+        } else if (age <= 23&&age>18&&salary>80_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * salaryCoefficient80 + " рублей");
+        } else if (age>23&&salary<50_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 + " рублей");
+        } else if (age>23&&salary>=50_000&&salary<80_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * salaryCoefficient50 + " рублей");
+        } else if (age>23&&salary>80_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * salaryCoefficient80 + " рублей");
+        } else
+            System.out.println("Обратитесь по достижении 18 лет!");
 
+        //STAR TASK 7
+
+
+
+        }
+    }
