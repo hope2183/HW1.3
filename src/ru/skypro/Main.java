@@ -80,28 +80,46 @@ public class Main {
         }
 
         //START TASK 6
-        int age = 16;
-        int salary = 98_000;
+        int age = 31;
+        int salary = 88_000;
         double salaryCoefficient50 = 1.2;
         double salaryCoefficient80 = 1.5;
-        if (age <= 23&&age>18&&salary<50_000){
+        if (age <= 23 && age > 18 && salary < 50_000) {
             System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 + " рублей");
-        }else if (age <= 23&&age>18&&salary>=50_000&&salary<80_000) {
-            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2*salaryCoefficient50 + " рублей");
-        } else if (age <= 23&&age>18&&salary>80_000) {
+        } else if (age <= 23 && age > 18 && salary >= 50_000 && salary < 80_000) {
+            System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * salaryCoefficient50 + " рублей");
+        } else if (age <= 23 && age > 18 && salary > 80_000) {
             System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 2 * salaryCoefficient80 + " рублей");
-        } else if (age>23&&salary<50_000) {
+        } else if (age > 23 && salary < 50_000) {
             System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 + " рублей");
-        } else if (age>23&&salary>=50_000&&salary<80_000) {
+        } else if (age > 23 && salary >= 50_000 && salary < 80_000) {
             System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * salaryCoefficient50 + " рублей");
-        } else if (age>23&&salary>80_000) {
+        } else if (age > 23 && salary > 80_000) {
             System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + salary * 3 * salaryCoefficient80 + " рублей");
         } else
             System.out.println("Обратитесь по достижении 18 лет!");
 
         //STAR TASK 7
+        int wantedSum = 330_000;
+        float basicRate = 0.1f;
+        int basicPeriod = 12;
+        float monthlyFeeCoefficient = 0.5f;
 
-
-
+        if (age < 23 && age > 18) {
+            basicRate += 0.01;
+        } else if (age >= 23 && age < 30) {
+            basicRate += 0.005;
         }
+        if (salary > 80_000) {
+            basicRate -= 0.007;
+        }
+        //System.out.println(basicRate);
+        System.out.print("Максимальный платеж при зарплате " + salary + " рублей равен " +
+                salary * monthlyFeeCoefficient + " рублей. Платеж по кредиту на запрашиваемую сумму составит " +
+                (wantedSum + (wantedSum * basicRate)) / basicPeriod + " рублей. ");
+        if (salary * monthlyFeeCoefficient > (wantedSum + (wantedSum * basicRate)) / basicPeriod) {
+            System.out.println("КРЕДИТ ОДОБРЕН.");
+        } else
+            System.out.println("ОТКАЗАНО!!!");
     }
+}
